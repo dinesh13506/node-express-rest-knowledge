@@ -17,3 +17,12 @@ This project uses express-joi-validation npm package for validating Express API'
 })
 
 ```
+
+
+Useful Links
+
+
+* [express-joi-validation](https://www.npmjs.com/package/express-joi-validation)
+* [Joi API Documentation](https://joi.dev/api/?v=17.4.2)
+* [Getting Started with express](https://expressjs.com/en/starter/hello-world.html)
+
