@@ -2,9 +2,10 @@
 
 This project uses express-joi-validation npm package for validating Express API's request headers, query and body.
 
-Sample Validation Schema for request body is: 
 
-
+**Sample Validation Schema for request body is: 
+**
+```
  const bodySchema = Joi.object({
     name: Joi.string().required(), //should be string and required
     anything: Joi.any().required(), //can be any data type and is required
@@ -15,3 +16,5 @@ Sample Validation Schema for request body is:
     maxNumber: Joi.number().required().greater(Joi.ref('minNumber')) //should be a number, is required and greater than minNumber
 
 })
+
+```
