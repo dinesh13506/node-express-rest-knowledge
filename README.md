@@ -3,8 +3,7 @@
 This project uses express-joi-validation npm package for validating Express API's request headers, query and body.
 
 
-**Sample Validation Schema for request body is: 
-**
+## Sample Validation Schema for request body is: 
 ```
  const bodySchema = Joi.object({
     name: Joi.string().required(), //should be string and required
