@@ -18,6 +18,24 @@ This project uses express-joi-validation npm package for validating Express API'
 
 ```
 
+### Sample curl
+```
+curl --location --request POST 'http://localhost:3000?pageNumber=1' \
+--header 'token: mytoken' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: connect.sid=s%3AUoWiFdHlEjy0vmBWeIBwoC-IUQNXDZCT.lJ8jIfzKSYr0kHFYmGyatsTRRE7rRjWUaRcy6j%2BW6NQ' \
+--data-raw '{
+    "name":"Dinesh",
+    "anything": "I can be anything",
+    "listOfNames" : ["Dinesh","Aman"],
+    "binaryValue" : "1",
+    "isHappy": true,
+    "minNumber": 1,
+    "maxNumber" : 2,
+    "message" : "I am isHappy"
+    }'
+```
+
 
 Useful Links
 
