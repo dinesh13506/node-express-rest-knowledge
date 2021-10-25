@@ -1,0 +1,18 @@
+{
+  "name": "joi-nodejs",
+  "version": "1.0.0",
+  "description": "this is a demo project for joi package",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dinesh Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-joi-validation": "^5.0.0",
+    "joi": "^17.4.2",
+    "nodemon": "^2.0.14"
+  }
+}
