@@ -52,6 +52,13 @@ curl --location --request POST 'http://localhost:3000/sendEmail' \
 }'
 ```
 
+```
+sample .env file
+
+email=senderemail@gmail.com
+password=senderemailpassword
+```
+
 Useful Links
 
 
