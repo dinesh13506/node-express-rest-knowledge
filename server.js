@@ -1,5 +1,7 @@
+require('dotenv').config()
 const express = require('express');
 const { binary } = require('joi');
+const mailer = require('./nodeMailer/mailer')
 const port = 3000
 const app = express()
 app.use(express.json());
@@ -55,6 +57,30 @@ const headerJoiOptions = {
 app.post('/',validator.headers(headersSchema, headerJoiOptions),validator.query(querySchema, options),validator.body(bodySchema, options), (req, res) => {
   console.log(req.body)
   res.send(`Hello ${req.body.name}`)
+})
+
+/**
+ * send email schema
+ */
+
+const sendEmailBodySchema = Joi.object({
+  subject: Joi.string().required(),
+  senderName: Joi.string().required(),
+  senderEmail: Joi.string().email({ tlds: { allow: false } }).required(),
+  receivers: Joi.array().required().items(Joi.string().email({tlds : {allow: false}})).min(1),
+  textMessage: Joi.string().required(),
+  htmlBody: Joi.string(),
+})
+
+app.post('/sendEmail',validator.body(sendEmailBodySchema, options), async(req, res) => {
+  try {
+    const body = req.body
+    const response = await mailer.sendEmail(body)
+    res.status(200).json(response)
+    
+  } catch (error) {
+    console.log(error)
+  }
 })
 
 app.listen(port, () => {
