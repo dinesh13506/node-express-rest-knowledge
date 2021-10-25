@@ -18,7 +18,7 @@ This project uses express-joi-validation npm package for validating Express API'
 
 ```
 
-### Sample curl
+### Sample curl 
 ```
 curl --location --request POST 'http://localhost:3000?pageNumber=1' \
 --header 'token: mytoken' \
@@ -36,6 +36,21 @@ curl --location --request POST 'http://localhost:3000?pageNumber=1' \
     }'
 ```
 
+### Sample curl for send email
+
+```
+curl --location --request POST 'http://localhost:3000/sendEmail' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: connect.sid=s%3AUoWiFdHlEjy0vmBWeIBwoC-IUQNXDZCT.lJ8jIfzKSYr0kHFYmGyatsTRRE7rRjWUaRcy6j%2BW6NQ' \
+--data-raw '{
+    "subject":"Hello By NodeMailer",
+    "senderName":"Node App",
+    "senderEmail" : "do-not-reply-nodeapp@gmail.com",
+    "receivers":["abc@gmail.com"],
+    "textMessage":"Hello World!",
+    "htmlBody": "<b> Hello World!</b>"
+}'
+```
 
 Useful Links
 
